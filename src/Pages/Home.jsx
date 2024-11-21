@@ -43,7 +43,19 @@ const Home = () => {
 
   return (
     <div className="container mx-auto p-10">
-      <h2 className="text-2xl font-bold mb-4 text-center mt-5">Our Products</h2>
+       <div className="float-right mb-10">
+        <select className="border-2  px-4  z-5 border-green-500 mb-10">
+           <option>Choose Category</option>
+          <option>Sugar</option>
+           <option>Rice</option>
+            <option>Oil</option>
+             <option>Dal</option>
+             <option>Salt</option>
+
+        </select>
+      </div>
+      <h2 className="text-2xl font-bold mb-4 text-center mt-5">Our <span className="text-green-500">Products</span></h2>
+     
       <ProductGrid products={products} />
     </div>
   );
