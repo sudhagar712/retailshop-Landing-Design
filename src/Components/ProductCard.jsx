@@ -33,11 +33,7 @@ const ProductCard = ({ product }) => {
       </div>
       
      
-      <div>
-        <button className="border-2 border-green-500 px-4 p-2 float-right shadow-lg hover:font-bold hover:bg-green-500 hover:text-white">
-          Add to Cart
-        </button>
-      </div>
+     
     </div>
   );
 };

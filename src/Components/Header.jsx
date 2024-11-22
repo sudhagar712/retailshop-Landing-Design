@@ -1,76 +1,74 @@
 import React from "react";
 import logo from "../assests/images/logo.png"
-import { Link } from "react-router-dom";
-import { FaCartArrowDown } from "react-icons/fa6";
-
+import { FaShoppingCart } from "react-icons/fa";
 
 const Header = () => {
   return (
-    <>
-    <header className=" text-black bg-gray-100 shadow-lg">
-      <div className="container mx-auto p-4 flex justify-between items-center">
-      
-        <div className="flex items-center space-x-2">
-          <Link to="/"><h1 className="text-2xl font-bold">
-           Shopping <span className="text-green-500">Mart</span>
-          </h1>  </Link>
-        
+    <header className=" bg-gradient-to-r from-white via-gray-300 to-yellow-500 shadow-lg text-white shadow-lg">
+      {/* Top Bar */}
+      <div className="flex justify-between items-center py-2 px-4 md:px-10">
+        {/* Left Section */}
+        <div className="flex items-center">
+          <div className="flex items-center">
+           
+             <img src={logo} className="w-[90px] h-[90px] "/>
+           
+            <span className="text-lg  mx-3 font-extrabold text-black ">AGR <span className="text-yellow-500">WORLD</span></span>
+          </div>
+         
         </div>
 
         {/* Search Bar */}
-        <div className="hidden  sm:flex items-center space-x-2">
+        <div className="hidden md:flex items-center bg-gradient-to-r from-white via-gray-300 to-yellow-500 rounded-full px-4 py-2">
           <input
             type="text"
-            placeholder="Search products..."
-            className="px-10  py-2 rounded-md shadow-lg focus:outline-none focus:ring-2 focus:ring-blue-300 text-black"
+            placeholder="Search Product"
+            className="bg-transparent text-black outline-none placeholder-black w-full"
           />
-          <button className="bg-white shadow-lg border-2 border-green-500  px-4 py-2 rounded-md hover:bg-blue-100 transition">
-            Search
-          </button>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth={2}
+            stroke="white"
+            className="w-5 h-5 ml-2"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M11 19a8 8 0 100-16 8 8 0 000 16zM21 21l-4.35-4.35"
+            />
+          </svg>
         </div>
 
-        {/* Navigation Links */}
-        <nav className="flex items-center space-x-4">
-          <Link  className=" hover:text-green-500 font-bold text-sm">
-           <span>Login/Register</span>
-          </Link>
-          <Link to="/cart" className="flex items-center hover:text-green-500  ">
-            <FaCartArrowDown className="text-3xl" />
-          </Link>
-        </nav>
-      </div>
-
-      {/* Mobile Search Bar */}
-      <div className="sm:hidden bg-green-500 p-3">
-        <div className="flex items-center space-x-2">
-          <input
-            type="text"
-            placeholder="Search products..."
-            className="px-4 py-2 w-full rounded-md focus:outline-none focus:ring-2 focus:ring-blue-300 text-black"
-          />
-          <button className="bg-white border-2 border-green-500 text-blue-600 px-4 py-2 rounded-md hover:bg-blue-100 transition">
-            Search
-          </button>
+        {/* Right Section */}
+        <div className="flex items-center space-x-4">
+          <FaShoppingCart className="text-3xl text-white " />
+          <span className="hidden md:block border-2 border-white cursor-pointer shadow p-5">Register/Login</span>
         </div>
       </div>
-      <hr/>
-     
-      <hr/>
+
+      {/* Bottom Navigation */}
+      <nav className="bg-black text-white">
+        <marquee>
+        <ul className="flex flex-wrap justify-center space-x-4 text-sm font-medium py-2 ">
+         
+          <li className="hover:text-blue-300 cursor-pointer">Groceries</li>
+          <li className="hover:text-blue-300 cursor-pointer">Home & Lifestyle</li>
+          <li className="hover:text-blue-300 cursor-pointer">Electronics</li>
+          <li className="hover:text-blue-300 cursor-pointer">Fashion</li>
+          <li className="hover:text-blue-300 cursor-pointer">
+            Industrial & Professional Supplies
+          </li>
+          <li className="hover:text-blue-300 cursor-pointer">
+            Precious Jewellery
+          </li>
+          <li className="hover:text-blue-300 cursor-pointer">Wellness</li>
+          <li className="hover:text-blue-300 cursor-pointer">All Categories</li>
+        </ul>
+        </marquee>
+      </nav>
     </header>
- <div className="text-center bg-green-500 p-3 text-white shadow">
-        <nav className="flex  items-center space-x-10">
-          <Link to="/"  className=" hover:text-black font-bold text-sm">
-           Home
-          </Link>
-          <Link to="/about"  className=" hover:text-black font-bold text-sm">
-           About
-          </Link>
-           <Link  className=" hover:text-black font-bold text-sm">
-           ContactUS
-          </Link>
-        </nav>
-      </div>
-    </>
   );
 };
 

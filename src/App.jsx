@@ -11,7 +11,6 @@ function App() {
   return (
     <Router>
       <div className="flex flex-col min-h-screen ">
-        <marquee className="text-xl font-bold text-white bg-green-500">***ASPV International Production Pvt Ltd ***</marquee>
         <Header />
         <main className="flex-grow">
           <Routes>
