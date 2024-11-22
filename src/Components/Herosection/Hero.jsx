@@ -4,6 +4,9 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 const Hero = () => {
+
+
+
   const videos = [
     {
       id: 1,
@@ -34,8 +37,9 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative bg-gradient-to-r from-white via-gray-300 to-yellow-500 p-6 lg:p-12">
-      <div className="container mx-auto flex flex-col lg:flex-row  gap-12">
+    <>
+     <section className="relative bg-gradient-to-r from-white via-gray-300 to-yellow-500 p-6 lg:p-12">
+      <div className="container mx-auto flex flex-col items-center lg:flex-row  gap-12">
         {/* Left side content - Shopping Offer */}
         <div className="lg:w-1/2 text-center lg:text-left">
           <h1 className="text-4xl font-bold text-blue-800">
@@ -51,29 +55,40 @@ const Hero = () => {
 
         {/* Right side video carousel */}
         <div className="lg:w-1/2 w-full">
-          <Slider {...settings}>
-            {videos.map((video) => (
-              <div key={video.id} className="relative overflow-hidden rounded-md shadow-lg">
-                <video
-                  src={video.src}
-                  autoPlay
-                  loop
-                  muted
-                  className="w-full h-full object-cover"
-                />
-                {/* Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-50"></div>
-                {/* Title */}
-                <div className="absolute bottom-4 left-4 text-white font-semibold text-lg">
-                  {video.title}
-                </div>
-              </div>
-            ))}
-          </Slider>
+        <img src="https://i.pinimg.com/736x/5a/65/61/5a6561119db533beb718347ff9c8b81d.jpg" />
+          
           
         </div>
       </div>
     </section>
+
+    <div className="bg-gradient-to-r from-white via-gray-300 to-yellow-500 px-3 sm:px-6 lg:px-12 py-4">
+  <Slider {...settings}>
+    {videos.map((video) => (
+      <div
+        key={video.id}
+        className="relative overflow-hidden rounded-md shadow-lg bg-yellow-300"
+      >
+        <video
+          src={video.src}
+          autoPlay
+          loop
+          muted
+          className="w-full h-70 sm:h-72 lg:h-[500px] shadow p-5 lg:object-fit"
+        />
+        {/* Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-60"></div>
+        {/* Title */}
+        <div className="absolute bottom-4 left-4 text-white font-semibold text-base sm:text-lg lg:text-xl p-6">
+          {video.title}
+        </div>
+      </div>
+    ))}
+  </Slider>
+</div>
+
+    </>
+   
   );
 };
 
