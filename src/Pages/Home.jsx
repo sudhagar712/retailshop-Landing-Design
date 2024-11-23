@@ -53,11 +53,11 @@ const Home = () => {
         <Virtual/>
         
    
-      <div className="container bg-gradient-to-r from-gray-200 via-gray-300 to-yellow-500 mx-auto p-10">
+      <div className="container bg-white mx-auto p-10">
        
        <div className="pt-7 p-5 text-center">
-        <span  className="text-3xl   mx-3 font-extrabold text-white ">
-              Gracories<span className="text-yellow-500">Products Collection</span>
+        <span  className="text-3xl   mx-3 font-extrabold text-black shadow ">
+              Top<span className="text-yellow-500">Products Collection</span>
             </span>
       </div>
 

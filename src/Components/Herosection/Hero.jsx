@@ -57,89 +57,115 @@ const images = [
 
   return (
     <>
-    <div className="bg-gradient-to-r from-gray-200 via-gray-300 to-yellow-500">
-      <div className="pt-7 p-5 text-center">
-        <span data-aos="zoom-in-up" className="text-3xl   mx-3 font-extrabold text-white ">
-              Trending <span className="text-yellow-500">Collection</span>
-            </span>
-      </div>
-
-     <div className="marquee-container mt-5">
-      <div className="marquee">
-        {images.map((img, index) => (
-          <img key={index} src={img} alt={`Image ${index + 1}`} className="marquee-image" />
-        ))}
-        {/* Duplicate images for smooth loop */}
-        {images.map((img, index) => (
-          <img key={index + images.length} src={img} alt={`Image Duplicate ${index + 1}`} className="marquee-image" />
-        ))}
-      </div>
-    </div>
-      
-     <div className="pt-7 p-5 text-center">
-        <span data-aos="zoom-in-up" className="text-3xl   mx-3 font-extrabold text-white ">
-              Happy <span className="text-yellow-500">Shopping</span>
-            </span>
-      </div>
-       <video
-          src="https://videos.pexels.com/video-files/5889074/5889074-uhd_2560_1440_25fps.mp4"
-          autoPlay
-          loop
-          muted
-          className="w-full h-70 sm:h-72 lg:h-[600px] shadow  lg:object-fit"
-        />
-    </div>
-     <section className="relative bg-gradient-to-r from-gray-200 via-gray-300 to-yellow-500 p-6 lg:p-12">
-      <div className="container mx-auto flex flex-col items-center lg:flex-row  gap-12">
-        {/* Left side content - Shopping Offer */}
-        <div className="lg:w-1/2 text-center lg:text-left">
-          <h1 className="text-4xl font-bold text-blue-800">
-            Don't Miss Out on Our Special Offers!
-          </h1>
-          <p className="text-xl text-gray-600 mt-5">
-           <em> Get up to 50% off on all categories. Shop now and enjoy exclusive deals across fashion, electronics, and groceries!</em>
-          </p>
-          <button data-aos="fade-right" className="mt-12 px-8 py-3 bg-yellow-300 font-extrabold text-black shadow-md hover:border-2 hover:border-white transition duration-200">
-            Shop Now
-          </button>
+      <div className="bg-[#fee479] shadow-xl">
+        <div className="pt-7 p-5 text-center">
+          <span
+            data-aos="zoom-in-up"
+            className="text-3xl shadow p-5  mx-3 font-extrabold text-white "
+          >
+            Top <span className="text-black">Collection</span>
+          </span>
         </div>
 
-        {/* Right side video carousel */}
-        <div className="lg:w-1/2 w-full">
-        <img src="https://i.pinimg.com/736x/5a/65/61/5a6561119db533beb718347ff9c8b81d.jpg" data-aos="fade-left" />
-          
-          
+        <div className="marquee-container mt-5">
+          <div className="marquee">
+            {images.map((img, index) => (
+              <img
+                key={index}
+                src={img}
+                alt={`Image ${index + 1}`}
+                className="marquee-image shadow-xl"
+              />
+            ))}
+            {/* Duplicate images for smooth loop */}
+            {images.map((img, index) => (
+              <img
+                key={index + images.length}
+                src={img}
+                alt={`Image Duplicate ${index + 1}`}
+                className="marquee-image"
+              />
+            ))}
+          </div>
+        </div>
+
+        <div className="pt-7 p-5 text-center">
+          <span
+            data-aos="zoom-in-up"
+            className="text-3xl shadow p-4  mx-3 font-extrabold text-white "
+          >
+            Happy <span className="text-black">Shopping</span>
+          </span>
+        </div>
+        <div className="text-center  flex justify-center">
+          <video
+            src="https://videos.pexels.com/video-files/5889074/5889074-uhd_2560_1440_25fps.mp4"
+            autoPlay
+            loop
+            muted
+            className=" h-[300px] w-[300px] rounded-full mb-10 mt-5  sm:h-72 lg:h-[500px] lg:w-[500px]  lg:rounded-full shadow bg-white  lg:object-fit"
+          />
         </div>
       </div>
-    </section>
+      <section className="relative bg-gradient-to-r from-gray-200 via-gray-300 to-yellow-500 p-6 lg:p-12">
+        <div className="container mx-auto flex flex-col items-center lg:flex-row  gap-12">
+          {/* Left side content - Shopping Offer */}
+          <div className="lg:w-1/2 text-center lg:text-left">
+            <div className="typing-container">
+              <h1 className="text-4xl font-bold text-blue-800 typing-effect">
+                Don't Miss Out on Our Special Offers!
+              </h1>
+            </div>
+            <p className="text-xl text-gray-600 mt-5">
+              <em>
+                {" "}
+                Get up to 50% off on all categories. Shop now and enjoy
+                exclusive deals across fashion, electronics, and groceries!
+              </em>
+            </p>
+            <button
+              data-aos="fade-right"
+              className="mt-12 px-8 py-3 bg-yellow-300 font-extrabold text-black shadow-md hover:border-2 hover:border-white transition duration-200"
+            >
+              Shop Now
+            </button>
+          </div>
 
-    <div className="bg-gradient-to-r from-white via-gray-300 to-yellow-500 px-3 sm:px-6 lg:px-12 py-4">
-  <Slider {...settings}>
-    {videos.map((video) => (
-      <div
-        key={video.id}
-        className="relative overflow-hidden rounded-md shadow-lg bg-yellow-300"
-      >
-        <video
-          src={video.src}
-          autoPlay
-          loop
-          muted
-          className="w-full h-70 sm:h-72 lg:h-[500px] shadow p-5 lg:object-fit"
-        />
-        {/* Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-60"></div>
-        {/* Title */}
-        <div className="absolute bottom-4 left-4 text-white font-semibold text-base sm:text-lg lg:text-xl p-6">
-          {video.title}
+          {/* Right side video carousel */}
+          <div className="lg:w-1/2 w-full">
+            <img
+              src="https://i.pinimg.com/736x/5a/65/61/5a6561119db533beb718347ff9c8b81d.jpg"
+              data-aos="fade-left"
+            />
+          </div>
         </div>
-      </div>
-    ))}
-  </Slider>
-</div>
+      </section>
 
+      <div className="bg-gradient-to-r from-white via-gray-300 to-yellow-500 px-3 sm:px-6 lg:px-12 py-4">
+        <Slider {...settings}>
+          {videos.map((video) => (
+            <div
+              key={video.id}
+              className="relative overflow-hidden rounded-md shadow-lg bg-yellow-300"
+            >
+              <video
+                src={video.src}
+                autoPlay
+                loop
+                muted
+                className="w-full h-70 sm:h-72 lg:h-[500px] shadow p-5 lg:object-fit"
+              />
+              {/* Overlay */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-60"></div>
+              {/* Title */}
+              <div className="absolute bottom-4 left-4 text-white font-semibold text-base sm:text-lg lg:text-xl p-6">
+                {video.title}
+              </div>
+            </div>
+          ))}
+        </Slider>
+      </div>
     </>
-   
   );
 };
 

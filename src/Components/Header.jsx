@@ -17,7 +17,7 @@ const Header = () => {
 
 
   return (
-    <header className=" bg-gradient-to-r from-black via-gray-300 to-yellow-500  text-white shadow-lg">
+    <header className=" bg-black  text-white shadow-lg">
       {/* Top Bar */}
       <div className="flex justify-between items-center py-2 px-4 md:px-10">
         {/* Left Section */}
@@ -64,8 +64,8 @@ const Header = () => {
       </div>
 
       {/* Bottom Navigation */}
-      <nav className="bg-gray-200 shadow-lg  text-black ">
-        <ul className=" max-sm:hidden  flex flex-wrap justify-center space-x-20  text-md py-3 ">
+      <nav className="bg-gray-500 shadow-lg  text-white ">
+        <ul className=" max-sm:hidden  flex flex-wrap justify-center space-x-20   text-md py-3 ">
           <li className="hover:text-blue-300 cursor-pointer ">Groceries</li>
           <li className="hover:text-blue-300 cursor-pointer">
             Home & Lifestyle
