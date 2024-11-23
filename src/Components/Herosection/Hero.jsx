@@ -1,11 +1,18 @@
-import React from "react";
+import React, { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 const Hero = () => {
 
-
+ useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      once: true,   
+    });
+  }, []);
 
   const videos = [
     {
@@ -36,26 +43,70 @@ const Hero = () => {
     autoplaySpeed: 3000,
   };
 
+
+const images = [
+    "https://images.meesho.com/images/products/270975442/dhrpz_512.webp", // Image 1
+    "https://www.foreverkidz.in/cdn/shop/files/SparklingStardustDressWithTrail_3.webp?crop=center&height=4386&v=1682749689&width=3133", // Image 2
+    "https://5.imimg.com/data5/SELLER/Default/2023/11/359002497/SH/TU/UI/132511052/kids-clothes.jpg", // Image 3
+    "https://baccabucci.com/cdn/shop/products/MG_5242.jpg?v=1633514122", // Image 4
+    "https://akm-img-a-in.tosshub.com/indiatoday/images/story/202409/iphone-16-in-10-minutes-205245733-16x9_2.jpg?VersionId=K4ta74rPSz1xfAj5HLxe0Kw8OqMwlZH7&size=690:388", // Image 5
+  ];
+
+
+
+
   return (
     <>
-     <section className="relative bg-gradient-to-r from-white via-gray-300 to-yellow-500 p-6 lg:p-12">
+    <div className="bg-gradient-to-r from-gray-200 via-gray-300 to-yellow-500">
+      <div className="pt-7 p-5 text-center">
+        <span data-aos="zoom-in-up" className="text-3xl   mx-3 font-extrabold text-white ">
+              Trending <span className="text-yellow-500">Collection</span>
+            </span>
+      </div>
+
+     <div className="marquee-container mt-5">
+      <div className="marquee">
+        {images.map((img, index) => (
+          <img key={index} src={img} alt={`Image ${index + 1}`} className="marquee-image" />
+        ))}
+        {/* Duplicate images for smooth loop */}
+        {images.map((img, index) => (
+          <img key={index + images.length} src={img} alt={`Image Duplicate ${index + 1}`} className="marquee-image" />
+        ))}
+      </div>
+    </div>
+      
+     <div className="pt-7 p-5 text-center">
+        <span data-aos="zoom-in-up" className="text-3xl   mx-3 font-extrabold text-white ">
+              Happy <span className="text-yellow-500">Shopping</span>
+            </span>
+      </div>
+       <video
+          src="https://videos.pexels.com/video-files/5889074/5889074-uhd_2560_1440_25fps.mp4"
+          autoPlay
+          loop
+          muted
+          className="w-full h-70 sm:h-72 lg:h-[600px] shadow  lg:object-fit"
+        />
+    </div>
+     <section className="relative bg-gradient-to-r from-gray-200 via-gray-300 to-yellow-500 p-6 lg:p-12">
       <div className="container mx-auto flex flex-col items-center lg:flex-row  gap-12">
         {/* Left side content - Shopping Offer */}
         <div className="lg:w-1/2 text-center lg:text-left">
           <h1 className="text-4xl font-bold text-blue-800">
             Don't Miss Out on Our Special Offers!
           </h1>
-          <p className="text-lg text-gray-600 mt-2">
-            Get up to 50% off on all categories. Shop now and enjoy exclusive deals across fashion, electronics, and groceries!
+          <p className="text-xl text-gray-600 mt-5">
+           <em> Get up to 50% off on all categories. Shop now and enjoy exclusive deals across fashion, electronics, and groceries!</em>
           </p>
-          <button className="mt-4 px-6 py-2 bg-yellow-300 text-white rounded-full shadow-md hover:bg-yellow-500 transition duration-300">
+          <button data-aos="fade-right" className="mt-12 px-8 py-3 bg-yellow-300 font-extrabold text-black shadow-md hover:border-2 hover:border-white transition duration-200">
             Shop Now
           </button>
         </div>
 
         {/* Right side video carousel */}
         <div className="lg:w-1/2 w-full">
-        <img src="https://i.pinimg.com/736x/5a/65/61/5a6561119db533beb718347ff9c8b81d.jpg" />
+        <img src="https://i.pinimg.com/736x/5a/65/61/5a6561119db533beb718347ff9c8b81d.jpg" data-aos="fade-left" />
           
           
         </div>

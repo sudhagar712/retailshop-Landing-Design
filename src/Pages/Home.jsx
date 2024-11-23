@@ -53,11 +53,13 @@ const Home = () => {
         <Virtual/>
         
    
-      <div className="container mx-auto p-10">
+      <div className="container bg-gradient-to-r from-gray-200 via-gray-300 to-yellow-500 mx-auto p-10">
        
-        <h2 className="text-2xl font-bold mb-4 text-center mt-5">
-          Our <span className="text-green-500">Products</span>
-        </h2>
+       <div className="pt-7 p-5 text-center">
+        <span  className="text-3xl   mx-3 font-extrabold text-white ">
+              Gracories<span className="text-yellow-500">Products Collection</span>
+            </span>
+      </div>
 
         <ProductGrid products={products} />
       </div>

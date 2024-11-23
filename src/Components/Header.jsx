@@ -1,10 +1,23 @@
-import React from "react";
+import React, { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 import logo from "../assests/images/logobg.png"
 import { FaShoppingCart } from "react-icons/fa";
 
 const Header = () => {
+
+ useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      once: true,   
+    });
+  }, []);
+
+
+
+
   return (
-    <header className=" bg-gradient-to-r from-white via-gray-300 to-yellow-500  text-white shadow-lg">
+    <header className=" bg-gradient-to-r from-black via-gray-300 to-yellow-500  text-white shadow-lg">
       {/* Top Bar */}
       <div className="flex justify-between items-center py-2 px-4 md:px-10">
         {/* Left Section */}
@@ -12,7 +25,7 @@ const Header = () => {
           <div className="flex items-center">
             <img src={logo} className="w-[90px] h-[90px] " />
 
-            <span className="text-lg  mx-3 font-extrabold text-black ">
+            <span data-aos="zoom-in-up" className="text-3xl   mx-3 font-extrabold text-white ">
               AGR <span className="text-yellow-500">WORLD</span>
             </span>
           </div>
@@ -43,17 +56,17 @@ const Header = () => {
 
         {/* Right Section */}
         <div className="flex items-center space-x-4">
-          <FaShoppingCart className="text-3xl text-white " />
-          <span className="hidden md:block border-2 border-white cursor-pointer shadow p-5">
+          <FaShoppingCart className="text-3xl text-gray-200 " />
+          <span className="hidden md:block border-2  border-white bg-black  rounded  font-bold cursor-pointer shadow p-5">
             Register/Login
           </span>
         </div>
       </div>
 
       {/* Bottom Navigation */}
-      <nav className="bg-gray-200 shadow-lg text-white">
-        <ul className=" max-sm:hidden  flex flex-wrap justify-center space-x-8 text-sm font-medium py-3 ">
-          <li className="hover:text-blue-300 cursor-pointer">Groceries</li>
+      <nav className="bg-gray-200 shadow-lg  text-black ">
+        <ul className=" max-sm:hidden  flex flex-wrap justify-center space-x-20  text-md py-3 ">
+          <li className="hover:text-blue-300 cursor-pointer ">Groceries</li>
           <li className="hover:text-blue-300 cursor-pointer">
             Home & Lifestyle
           </li>
@@ -71,26 +84,13 @@ const Header = () => {
       </nav>
 
       {/* Search Bar */}
-      <div className=" md:hidden md:flex items-center  rounded-full md:px-4 md:py-2 p-3 ">
+      <div className=" md:hidden md:flex items-center  rounded-full md:px-4 md:py-2 p-3  ">
         <input
           type="text"
           placeholder="Search Product"
-          className=" text-black outline-none placeholder-black w-full p-3"
+          className=" text-black  outline-none rounded-full placeholder-black w-full p-3 "
         />
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          strokeWidth={2}
-          stroke="white"
-          className="w-5 h-5 ml-2"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            d="M11 19a8 8 0 100-16 8 8 0 000 16zM21 21l-4.35-4.35"
-          />
-        </svg>
+       
       </div>
     </header>
   );
