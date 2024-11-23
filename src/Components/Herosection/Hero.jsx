@@ -61,9 +61,9 @@ const images = [
         <div className="pt-7 p-5 text-center">
           <span
             data-aos="zoom-in-up"
-            className="text-3xl shadow p-5  mx-3 font-extrabold text-white "
+            className="text-3xl    mx-3 font-extrabold text-black "
           >
-            Top <span className="text-black">Collection</span>
+            Top <span className="text-blue-700">Collection</span>
           </span>
         </div>
 
@@ -73,6 +73,7 @@ const images = [
               <img
                 key={index}
                 src={img}
+                data-aos="zoom-in"
                 alt={`Image ${index + 1}`}
                 className="marquee-image shadow-xl"
               />
@@ -92,9 +93,9 @@ const images = [
         <div className="pt-7 p-5 text-center">
           <span
             data-aos="zoom-in-up"
-            className="text-3xl shadow p-4  mx-3 font-extrabold text-white "
+            className="text-3xl   mx-3 font-extrabold text-black "
           >
-            Happy <span className="text-black">Shopping</span>
+            Happy <span className="text-blue-700">Shopping</span>
           </span>
         </div>
         <div className="text-center  flex justify-center">
@@ -103,6 +104,7 @@ const images = [
             autoPlay
             loop
             muted
+            data-aos="zoom-in"
             className=" h-[300px] w-[300px] rounded-full mb-10 mt-5  sm:h-72 lg:h-[500px] lg:w-[500px]  lg:rounded-full shadow bg-white  lg:object-fit"
           />
         </div>
@@ -111,11 +113,9 @@ const images = [
         <div className="container mx-auto flex flex-col items-center lg:flex-row  gap-12">
           {/* Left side content - Shopping Offer */}
           <div className="lg:w-1/2 text-center lg:text-left">
-            <div className="typing-container">
-              <h1 className="text-4xl font-bold text-blue-800 typing-effect">
-                Don't Miss Out on Our Special Offers!
-              </h1>
-            </div>
+            <h1 className="text-4xl font-bold text-blue-800">
+              Don't Miss Out on Our Special Offers!
+            </h1>
             <p className="text-xl text-gray-600 mt-5">
               <em>
                 {" "}

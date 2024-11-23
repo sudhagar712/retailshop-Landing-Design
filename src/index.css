@@ -349,32 +349,3 @@ section {
 
 
 
-.typing-container {
-  width: fit-content;
-  border-right: 2px solid transparent; /* Optional for cursor effect */
-  white-space: nowrap; /* Keeps text in a single line */
-  overflow: hidden; /* Hides text outside the container */
-}
-
-.typing-effect {
-  animation: typing 4s steps(40, end), blink 0.5s step-end infinite;
-  display: inline-block;
-}
-
-@keyframes typing {
-  from {
-    width: 0; /* Starts with no visible text */
-  }
-  to {
-    width: 100%; /* Reveals the full text */
-  }
-}
-
-@keyframes blink {
-  50% {
-    border-color: transparent; /* Blinks the border to simulate a cursor */
-  }
-  100% {
-    border-color: black;
-  }
-}
